@@ -17,19 +17,19 @@ a,code,em,strong {
 /* tags with attributes. */
 
 a[href]::before {
-   content: "<a href='" attr(href) "'>"
+   content: attr("<a href='" attr(href) "'>")
 }
 
 link[rel]::before {
-   content: "<link rel='" attr(rel) "' type='" attr(type)"' href='" attr(href) "'>"
+   content: attr("<link rel='" attr(rel) "' type='" attr(type)"' href='" attr(href) "'>")
 }
 
 /* special escaping for close style */
 style::before {
-   content:attr('<style>');
+   content: attr('<style>');
 }
 style::after {
-   content:'<\/style>';
+   content: attr('\/style>');
 }
 
 
@@ -56,106 +56,106 @@ html {
 
 /* here is the highly repetitive bit */
 p::before {
-   content: '<p>'
+   content: attr('<p>')
 }
 p::after {
-   content:'</p>'
+   content: attr('<p>')
 }
 html::before {
-   content:'<html>'
+   content: attr('<html>')
 }
 html::after {
-   content:'</html>'
+   content: attr('</html>')
 }
 head::before {
-   content:'<head>'
+   content: attr('<head>')
 }
 head::after {
-   content:'</head>'
+   content: attr('</head>')
 }
 title::before {
-   content:'<title>'
+   content: attr('<title>')
 }
 title::after {
-   content:'</title>'
+   content: attr('</title>')
 }
 link::before {
-   content:'<link>'
+   content: attr('<link>')
 }
 link::after {
-   content:'</link>'
+   content: attr('</link>')
 }
 body::before {
-   content:'<body>'
+   content: attr('<body>')
 }
 body::after {
-   content:'</body>'
+   content: attr('</body>')
 }
 h1::before {
-   content:'<h1>'
+   content: attr('<h1>')
 }
 h1::after {
-   content:'</h1>'
+   content: attr('</h1>')
 }
 h2::before {
-   content:'<h2>'
+   content:'<attr(h2>')
 }
 h2::after {
-   content:'</h2>'
+   content:'<attr(/h2>')
 }
 p::before {
-   content:'<p>'
+   content:'<attr(p>')
 }
 p::after {
-   content:'</p>'
+   content:'<attr(/p>')
 }
 pre::before {
-   content:'<pre>'
+   content:'<attr(pre>')
 }
 pre::after {
-   content:'</pre>'
+   content:'<attr(/pre>')
 }
 code::before {
-   content:'<code>'
+   content:'<attr(code>')
 }
 code::after {
-   content:'</code>'
+   content:'<attr(/code>')
 }
 a::before {
-   content:'<a>'
+   content:'<attr(a>')
 }
 a::after {
-   content:'</a>'
+   content:'<attr(/a>')
 }
 aside::before {
-   content:'<aside>'
+   content:'<attr(aside>')
 }
 aside::after {
-   content:'</aside>'
+   content:'<attr(/aside>')
 }
 blockquote::before {
-   content:'<blockquote>'
+   content:'<attr(blockquote>')
 }
 blockquote::after {
-   content:'</blockquote>'
+   content:'<attr(/blockquote>')
 }
 em::before {
-   content:'<em>'
+   content:'<attr(em>')
 }
 em::after {
-   content:'</em>'
+   content:'<attr(/em>')
 }
 strong::before {
-   content:'<strong>'
+   content:'<attr(strong>')
 }
 strong::after {
-   content:'</strong>'
+   content:'<attr(/strong>')
 }
 section::before {
-   content:'<section>'
+   content:'<attr(section>')
 }
 section::after {
-   content:'</section>'
+   content:'<attr(/section>')
 }
 
 /* adapted from Q position absolute or fixed*/ 
