@@ -26,7 +26,7 @@ link[rel]::before {
 
 /* special escaping for close style */
 style::before {
-   content:'<style>';
+   content:attr('<style>');
 }
 style::after {
    content:'<\/style>';
@@ -35,11 +35,11 @@ style::after {
 
 /* brutify */
 *::before, *::after {
-  visibility: hidden;
+  display: none;
 }
 
 *:hover::before, *:hover::after {
-  visibility: visible;
+  display: inline;
   color:rgb(136, 18, 128, 0.5);
   font-weight:100;
   font-size:0.8em;
@@ -158,25 +158,33 @@ section::after {
    content:'</section>'
 }
 
-/* adapted from Q */
+/* adapted from Q position absolute or fixed*/ 
 /* add pop ups for some javascript acting on code perhaps? */
-.popup .popup-text {
+.data-tip .data-tip-text {
 	background: black;
-	position: absolute;
+	position: fixed; 
 	/* top: -30px; */
 	/* width: 110px; */
 	/* margin-left: -5px; */
-	color: white;
+	color: cyan;
 	font-size: 15px;
 	padding: 10px;
 	font-family: monospace;
-	opacity: 0;
+/* 	opacity: 0; */
 	text-align: center;
 	-webkit-transition: all 500ms ease-in-out;
 }
-.popup:hover {
+
+.data-tip:hover {
 	color: black;
 }
-.popup:hover .popup-text {
+.data-tip:hover .data-tip-text {
 	opacity: 1;
 }
+
+/* .p5z {
+  z-index: 1;
+  position: fixed;
+  left: 0px;
+  top: -55px;
+} */
