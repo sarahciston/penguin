@@ -38,18 +38,25 @@
 let tipDiv;
 document.onmouseover = function(e) {
   //find
-  let target = e.target;
-  let tipHtml = target.dataset.tip;
-  if (!tipHtml) return;
+  let t = e.target;
+  let tipText = t.outerHTML
+  //alternate version with more of the tree, toggle on/off? 
+  // tipText = '<' + t.parentNode.nodeName + '>' + t.outerHTML + '</' + t.parentNode.nodeName + '>'
+  
   //create
   tipDiv = document.createElement('div')
   tipDiv.classname = 'tip'
-  tipDiv.innerHTML = tipHtml
-  document.body.append(tipDiv)
+  tipDiv.innerText = (tipText)
+  
   //position
-  let pos = target.getBoundingClientRect()
-  tipDiv.style.left = pos.left/2 + 'px'
-  tipDiv.style.top = pos.top/2 + 'px'
+  let pos = t.getBoundingClientRect();
+  let left = pos.left + (t.offsetWidth - tipDiv.offsetWidth) / 2;
+  if (left < 0) left = 0; // don't cross the left window edge
+  let top = pos.top - tipDiv.offsetHeight - 5;
+  if (top < 0) { top = pos.top + t.offsetHeight + 5; }// if crossing the top window edge, show below instead
+  t.appendChild(tipDiv)
+
+  console.log(tipDiv.innerText, tipDiv.style.color, tipDiv.style.top)
 }
 
 document.onmouseout = function(e) {
@@ -58,4 +65,3 @@ document.onmouseout = function(e) {
     tipDiv = null;
   }
 }
-

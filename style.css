@@ -1,61 +1,101 @@
-/* adapted from secretGeek/html_wysiwyg */
 
-* {
+
+* {  
   display: block;
-   font-family: 'Avenir', 'Arial', sans-serif;
-   margin:1.5em 0;
-   padding:0;
-   text-decoration: none;
+  font-family: 'Avenir', 'Arial', sans-serif;
+  margin: 1.5em 0;
+  padding: 0;
+  text-decoration: none;
 }
 
-a,code,em,strong {
-   display:inline;
-   decoration:none;
-   font-family: 'Roboto', monospace;
+a,code {
+  decoration: none;
+  font-family: 'Roboto', monospace;
 }
 
+html {
+   max-width: 200ch;
+   padding: 2ch;
+   margin: auto;
+   color: #333;
+   font-size: 1.2em;
+}
+
+/* adapted from Q position absolute, or fixed?*/ 
+/* add pop ups for some javascript acting on code perhaps? */
+
+div.tip {
+	background: rgb(136, 18, 128, 0.5);
+	position: absolute; 
+	color: cyan;
+	font-weight:100;
+  font-size:0.8em;
+	padding: 10px;
+	font-family: 'Roboto', monospace;
+	text-align: center;
+  z-index: 2;
+  /* top: -30px; */
+	/* width: 110px; */
+	/* margin-left: -5px; */
+  /*   opacity: 0; */
+	
+	-webkit-transition: all 500ms ease-in-out;
+}
+
+/* .tip:hover {
+	opacity: 1;
+  color: black;
+} */
+
+/* .p5z {
+  z-index: 1;
+  position: fixed;
+  left: 0px;
+  top: -55px;
+} */
+
+
+
+
+
+
+
+
+/* adapted from secretGeek/html_wysiwyg */
 /* tags with attributes. */
 
-a[href]::before {
+/* a[href]::before {
    content: attr("<a href='" attr(href) "'>")
 }
 
 link[rel]::before {
    content: attr("<link rel='" attr(rel) "' type='" attr(type)"' href='" attr(href) "'>")
-}
+} */
 
 /* special escaping for close style */
-style::before {
+/* style::before {
    content: attr('<style>');
 }
 style::after {
    content: attr('\/style>');
-}
+} */
 
 
 /* brutify */
-*::before, *::after {
-  display: none;
-}
+/* *::before, *::after { */
+/*   display: none; */
+/* } */
 
-*:hover::before, *:hover::after {
+/* *:hover::before, *:hover::after {
   display: inline;
   color:rgb(136, 18, 128, 0.5);
   font-weight:100;
   font-size:0.8em;
   font-family: 'Roboto', monospace;
-}
-
-html {
-   max-width:70ch;
-   padding:2ch;
-   margin:auto;
-   color:#333;
-   font-size:1.2em;
-}
+} */
 
 /* here is the highly repetitive bit */
-p::before {
+/* p::before {
    content: attr('<p>')
 }
 p::after {
@@ -156,35 +196,4 @@ section::before {
 }
 section::after {
    content:'<attr(/section>')
-}
-
-/* adapted from Q position absolute or fixed*/ 
-/* add pop ups for some javascript acting on code perhaps? */
-.data-tip .data-tip-text {
-	background: black;
-	position: fixed; 
-	/* top: -30px; */
-	/* width: 110px; */
-	/* margin-left: -5px; */
-	color: cyan;
-	font-size: 15px;
-	padding: 10px;
-	font-family: monospace;
-/* 	opacity: 0; */
-	text-align: center;
-	-webkit-transition: all 500ms ease-in-out;
-}
-
-.data-tip:hover {
-	color: black;
-}
-.data-tip:hover .data-tip-text {
-	opacity: 1;
-}
-
-/* .p5z {
-  z-index: 1;
-  position: fixed;
-  left: 0px;
-  top: -55px;
 } */
