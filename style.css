@@ -9,13 +9,14 @@
 }
 
 a,code {
+/*   display: inline; */
   decoration: none;
   font-family: 'Roboto', monospace;
 }
 
 html {
-   max-width: 200ch;
-   padding: 2ch;
+   max-width: 120ch;
+   padding: 10px;
    margin: auto;
    color: #333;
    font-size: 1.2em;
@@ -25,19 +26,22 @@ html {
 /* add pop ups for some javascript acting on code perhaps? */
 
 div.tip {
-	background: rgb(136, 18, 128, 0.5);
-	position: absolute; 
-	color: cyan;
-	font-weight:100;
-  font-size:0.8em;
+	background: #ffe6f2;  /*     rgb(136, 18, 128, 0.5); */
+	position: fixed; 
+	color: #404040;
+	font-weight: 100;
+  font-size: 0.9em;
 	padding: 10px;
+  border-radius: 5px;
 	font-family: 'Roboto', monospace;
-	text-align: center;
+	text-align: left;
   z-index: 2;
+  left: 80vw;
+  right: 2vw;
   /* top: -30px; */
 	/* width: 110px; */
-	/* margin-left: -5px; */
-  /*   opacity: 0; */
+/* 	margin-left: -5px; */
+  opacity: 80;
 	
 	-webkit-transition: all 500ms ease-in-out;
 }
@@ -60,8 +64,8 @@ div.tip {
 
 
 
-
 /* adapted from secretGeek/html_wysiwyg */
+
 /* tags with attributes. */
 
 /* a[href]::before {
