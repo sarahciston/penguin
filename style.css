@@ -98,71 +98,71 @@ h1::after {
    content: attr('</h1>')
 }
 h2::before {
-   content:'<attr(h2>')
+   content: attr('<h2>')
 }
 h2::after {
-   content:'<attr(/h2>')
+   content: attr('</h2>')
 }
 p::before {
-   content:'<attr(p>')
+   content: attr('<p>')
 }
 p::after {
-   content:'<attr(/p>')
+   content: attr('</p>')
 }
 pre::before {
-   content:'<attr(pre>')
+   content: attr('<pre>')
 }
 pre::after {
-   content:'<attr(/pre>')
+   content: attr('</pre>')
 }
 code::before {
-   content:'<attr(code>')
+   content: attr('<code>')
 }
 code::after {
-   content:'<attr(/code>')
+   content: attr('</code>')
 }
 a::before {
-   content:'<attr(a>')
+   content: attr('<a>')
 }
 a::after {
-   content:'<attr(/a>')
+   content: attr('</a>')
 }
 aside::before {
-   content:'<attr(aside>')
+   content: attr('<aside>')
 }
 aside::after {
-   content:'<attr(/aside>')
+   content: attr('</aside>')
 }
 blockquote::before {
-   content:'<attr(blockquote>')
+   content: attr('<blockquote>')
 }
 blockquote::after {
-   content:'<attr(/blockquote>')
+   content: attr('</blockquote>')
 }
 em::before {
-   content:'<attr(em>')
+   content: attr('<em>')
 }
 em::after {
-   content:'<attr(/em>')
+   content: attr('</em>')
 }
 strong::before {
-   content:'<attr(strong>')
+   content: attr('<strong>')
 }
 strong::after {
-   content:'<attr(/strong>')
+   content: attr('</strong>')
 }
 section::before {
-   content:'<attr(section>')
+   content: attr('<section>')
 }
 section::after {
-   content:'<attr(/section>')
+   content: attr('</section>')
 }
 
-/* adapted from Q position absolute or fixed*/ 
+/* adapted from Q position absolute or fixed*/
 /* add pop ups for some javascript acting on code perhaps? */
 .data-tip .data-tip-text {
 	background: black;
-	position: fixed; 
+	position: fixed;
 	/* top: -30px; */
 	/* width: 110px; */
 	/* margin-left: -5px; */
