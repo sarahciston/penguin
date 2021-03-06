@@ -1,6 +1,7 @@
 //vanilla JS
 
 let tipDiv;
+let tipContainer;
 document.onmouseover = function(e) {
   //find
   let t = e.target;
@@ -9,21 +10,34 @@ document.onmouseover = function(e) {
   // tipText = '<' + t.parentNode.nodeName + '>' + t.outerHTML + '</' + t.parentNode.nodeName + '>'
   
   //create
+  // tipContainer = document.createElement("div")
+  // tipContainer.classList.add('code')
+  // tipContainer.innerHtml = (tipDiv)
   tipDiv = document.createElement("div")
   tipDiv.classList.add('tip')
   tipDiv.innerText = (tipText)
   
+  // tipPre.appendChild(tipCode)
+  // tipDiv.appendChild(tipPre)
+  t.appendChild(tipDiv) //WHY NO CSS APPLIED?
+  
   //position
   let pos = t.getBoundingClientRect();
+  
   let left = pos.left + (t.offsetWidth - tipDiv.offsetWidth) / 2;
   if (left < 0) left = 0; // don't cross the left window edge
   let top = pos.top - tipDiv.offsetHeight - 5;
-  if (top < 0) { top = pos.top + t.offsetHeight + 5; }// if crossing the top window edge, show below instead
+  if (top < 0) { top = pos.top + t.offsetHeight + 5; } // if crossing the top window edge, show below instead
+  // let bot = pos.bottom - tipDiv.offsetHeight - 5;
+  // if (bot < 0) { top = tipDiv.offsetHeight - bot - 5; } 
+  // console.log("bottom = " + bot)
+  // console.log("top = " + t.offsetHeight)
 
   // tipDiv.style.left = left + 'px'
   tipDiv.style.top = top + 'px'
+  // tipDiv.style.bottom = bot + 'px'
   
-  t.appendChild(tipDiv) //WHY NO CSS APPLIED?
+  
   console.log(tipDiv.innerText, tipDiv.style.left, tipDiv.style.top)
 }
 
@@ -32,6 +46,11 @@ document.onmouseout = function(e) {
     tipDiv.remove();
     tipDiv = null;
   }
+}
+
+function setSelectedElement(el) {
+    // do something with the selected element
+  console.log(el)
 }
 
 
